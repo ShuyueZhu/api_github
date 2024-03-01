@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+</head>
+<body>
+    <h1>Welcome to Weather API</h1>
+    <h2>Choose the type of weather information you want:</h2>
+    <ul>
+        <li>
+            <h3>Current Weather</h3>
+            <form action="/current_weather" method="POST">
+                <label for="city_current">Enter City:</label>
+                <input type="text" id="city_current" name="city" required>
+                <button type="submit">Get Current Weather</button>
+            </form>
+            <div id="current_weather_result"></div>
+        </li>
+    </ul>
+
+    <script>
+        function displayResult(elementId, result) {
+            document.getElementById(elementId).innerHTML = JSON.stringify(result, null, 2);
+        }
+    </script>
+</body>
+</html>

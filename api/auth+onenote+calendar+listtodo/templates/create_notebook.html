@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Microsoft Identity Python Web App: Create Notebook</title>
+</head>
+<body>
+    <h1>Create Notebook</h1>
+
+    <form action="/create_onenote_notebook" method="POST">
+        <label for="notebook_name">Notebook Name:</label><br>
+        <input type="text" id="notebook_name" name="notebook_name"><br>
+        <input type="submit" value="Create Notebook">
+    </form>
+
+    <hr>
+    <footer style="text-align: right">Powered by Identity Web {{ version }}</footer>
+</body>
+</html>

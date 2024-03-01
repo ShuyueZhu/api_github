@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Microsoft Identity Python Web App: Index</title>
+</head>
+<body>
+    <h1>Microsoft Identity Python Web App</h1>
+    <h2>Welcome {{ user.get("name") }}!</h2>
+
+    <ul>
+    {% if config.get("ENDPOINT") %}
+      <li><a href='/list_onenote_notebooks'>List OneNote Notebooks</a></li>
+    {% endif %}
+
+    {% if config.get("B2C_PROFILE_AUTHORITY") %}
+      <li><a href='{{config.get("B2C_PROFILE_AUTHORITY")}}?client_id={{config.get("CLIENT_ID")}}'>Edit Profile</a></li>
+    {% endif %}
+    
+    <li><a href="/create_notebook">Create Notebook</a></li>
+    </ul>
+
+    <li><a href="/list_calendar_events">List Calendar Events</a></li>
+    </ul>
+
+    <li><a href="/create_meeting">Create Meeting</a></li>
+    </ul>
+
+    <li><a href="/list_todo_tasks">List Todo Tasks</a></li>
+    </ul>
+
+    <li><a href="/logout">Logout</a></li>
+    </ul>
+
+    <hr>
+    <footer style="text-align: right">Powered by Identity Web {{ version }}</footer>
+</body>
+</html>
